@@ -11,5 +11,13 @@ jobs:
     - uses: actions/checkout@v2
     - name: Docker Build
       run: |
-        docker build ./ -t dockerbuild2
+        docker build --tag my-image:v1 ./
+    - name: Push to ECR
+      id: ecr
+      uses: tsvetomir.grabchev@estafet.com/gh-ecr-push@v1
+      with:
+        access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        region: eu-west-2
+        image: my-image:v1
 
