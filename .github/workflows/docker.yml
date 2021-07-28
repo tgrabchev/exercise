@@ -1,0 +1,15 @@
+
+name: Docker Build
+
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Docker Build
+      run: |
+        docker build ./ -t dockerbuild1
+
