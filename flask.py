@@ -1,15 +1,9 @@
-import os
-from flask import Flask
+FROM ubuntu
 
-app = Flask(__name__)
+RUN apt-get update
+RUN apt-get install -y python python3-pip
+RUN pip install flask
 
-@app.route("/")
-def home():
-    return "Hello, World!"
-    
-@app.route("/salvador")
-def salvador():
-    return "Hello, Salvador"
-    
-if __name__ == "__main__":
-    app.run(debug=True)
+COPY app.py /opt/app.py
+
+ENTRYPOINT FLASK_APP=/opt/app.py flask run --host=0.0.0.0
