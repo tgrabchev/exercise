@@ -28,3 +28,10 @@ jobs:
       run: |
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+        
+    - name: helm deploy
+      uses: oslepov/helm-eks-action@master
+      env:
+        KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
+      with:
+        command: helm install mychart ./Docker+Helm+Kubernetes/mychart
