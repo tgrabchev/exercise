@@ -1,2 +1,2 @@
 name: webapp
-image: webapp:v1
+image: 981325600132.dkr.ecr.eu-west-2.amazonaws.com/docker_ecr:2c7a92192072ba608f79ec826aca547ab9000fef
