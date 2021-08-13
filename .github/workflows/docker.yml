@@ -33,4 +33,4 @@ jobs:
       env:
         KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
       with:                                                            
-        args: run mywebapp --image=981325600132.dkr.ecr.eu-west-2.amazonaws.com:latest
+        args: run mywebapp --image=981325600132.dkr.ecr.eu-west-2.amazonaws.com/docker_ecr:latest
