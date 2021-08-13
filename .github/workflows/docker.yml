@@ -34,4 +34,4 @@ jobs:
       env:
         KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
       with:                                                            
-        args: get pods
+        args: run --image=${{ github.sha }}
