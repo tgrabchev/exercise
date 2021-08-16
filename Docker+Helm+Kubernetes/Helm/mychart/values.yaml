@@ -1,2 +1,2 @@
 name: webapp
-image: 981325600132.dkr.ecr.eu-west-2.amazonaws.com/docker_ecr:latest
+image: 981325600132.dkr.ecr.eu-west-2.amazonaws.com/docker_ecr:4f3ddd0a09d20133718b833f7068500885bef814
