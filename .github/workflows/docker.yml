@@ -34,4 +34,4 @@ jobs:
       env:
         KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
       with:
-        command: helm install mychart ./Docker+Helm+Kubernetes/Helm/mychart
+        command: helm install mychart1 ./Docker+Helm+Kubernetes/Helm/mychart
