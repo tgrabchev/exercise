@@ -29,9 +29,9 @@ jobs:
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         
-    - name: Verify Kubernetes deployment                               
-      uses: kodermax/kubectl-aws-eks@master
+    - name: deploy postgres to cluster
+      uses: wahyd4/kubectl-helm-action@master
       env:
         KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
-      with:                                                            
-        args: run mywebapp --image=981325600132.dkr.ecr.eu-west-2.amazonaws.com/docker_ecr:${{ github.sha }}
+      with:
+        args: helm install mychart ./Docker+Helm+Kubernetes/Helm/mychart
