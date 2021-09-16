@@ -1,4 +1,4 @@
-                                   ***Installing and configuring Nginx Ingress Controller in AWS EKS Cluster.***
+                                   # Installing and configuring Nginx Ingress Controller in AWS EKS Cluster.***
                                  
 
 ***1. Creating your EKS cluster using Terraform script.***
